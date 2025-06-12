@@ -1,4 +1,6 @@
-const CACHE_NAME = 'free-web-tools-v2';
+// Increment the version to bust the cache when deploying a new release
+const CACHE_VERSION = 'v3';
+const CACHE_NAME = `free-web-tools-${CACHE_VERSION}`;
 const ASSETS = [
   './',
   './index.html',
@@ -27,8 +29,40 @@ self.addEventListener('install', event => {
   );
 });
 
+// Remove old caches when activating the new service worker
+self.addEventListener('activate', event => {
+  event.waitUntil((async () => {
+    const keys = await caches.keys();
+    await Promise.all(
+      keys
+        .filter(key => key.startsWith('free-web-tools-') && key !== CACHE_NAME)
+        .map(key => caches.delete(key))
+    );
+    await self.clients.claim();
+    const clients = await self.clients.matchAll();
+    clients.forEach(client => client.postMessage({ type: 'UPDATE_AVAILABLE' }));
+  })());
+});
+
+// Allow the page to trigger skipWaiting
+self.addEventListener('message', event => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
+});
+
 self.addEventListener('fetch', event => {
   event.respondWith(
-    caches.match(event.request).then(resp => resp || fetch(event.request))
+    caches.match(event.request).then(cached => {
+      if (cached) return cached;
+      return fetch(event.request).then(networkResp => {
+        // Runtime cache for modules and CDN resources
+        if (event.request.url.startsWith(self.location.origin + '/modules/') ||
+            event.request.url.includes('cdn.jsdelivr.net')) {
+          caches.open(CACHE_NAME).then(cache => cache.put(event.request, networkResp.clone()));
+        }
+        return networkResp;
+      });
+    })
   );
 });
