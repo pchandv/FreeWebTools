@@ -1,4 +1,4 @@
-const CACHE_NAME = 'free-web-tools-v1';
+const CACHE_NAME = 'free-web-tools-v2';
 const ASSETS = [
   './',
   './index.html',
@@ -8,6 +8,12 @@ const ASSETS = [
   './modules/jsonToDataTable.js',
   './modules/jsonTreeView.js',
   './modules/about.js',
+  './modules/pdfToWord.js',
+  './modules/wordToPdf.js',
+  './modules/wysiwyg.js',
+  './modules/xmlJson.js',
+  './modules/apiTester.js',
+  './modules/websocketTester.js',
   'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css',
   'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js',
   'https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js',
