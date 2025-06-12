@@ -27,3 +27,6 @@ tool. Conversions happen client side using libraries loaded from CDNs.
 Simply open `index.html` in a modern browser or serve the directory with a static server.
 
 Service worker enables offline usage after the first load.
+
+## License
+This project is licensed under the [MIT License](LICENSE).
