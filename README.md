@@ -7,6 +7,7 @@ It works entirely in the browser and can be hosted statically (e.g., GitHub Page
 - Multiple Images to PDF converter
 - JSON to DataTable viewer
 - JSON Tree View
+- Income Tax Calculator with Form 16 auto-fill
 - About page
 
 Additional tools can be added in `modules/`.

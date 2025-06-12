@@ -2,6 +2,7 @@ import { initImagesToPdf } from '../modules/imagesToPdf.js';
 import { initJsonToDataTable } from '../modules/jsonToDataTable.js';
 import { initJsonTreeView } from '../modules/jsonTreeView.js';
 import { initAbout } from '../modules/about.js';
+import { initTaxCalculator } from '../modules/taxCalculator.js';
 
 const app = document.getElementById('app');
 
@@ -16,6 +17,9 @@ function render(hash) {
       break;
     case '#tree':
       initJsonTreeView(app);
+      break;
+    case '#tax':
+      initTaxCalculator(app);
       break;
     default:
       initAbout(app);
