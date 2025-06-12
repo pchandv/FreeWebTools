@@ -4,7 +4,7 @@ This project is a collection of offline-first tools bundled as a Progressive Web
 It works entirely in the browser and can be hosted statically (e.g., GitHub Pages).
 
 ## Features (partial implementation)
-- Multiple Images to PDF converter
+- Multiple Images to PDF converter (drag & drop, reordering and rotation)
 - JSON to DataTable viewer
 - JSON Tree View
 - About page
