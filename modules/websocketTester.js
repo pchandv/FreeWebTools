@@ -1,7 +1,7 @@
 export function initWebsocketTester(container) {
   container.innerHTML = `
     <h2>WebSocket Tester</h2>
-    <input id="wsUrl" class="form-control" placeholder="wss://echo.websocket.org" />
+    <input id="wsUrl" class="form-control" placeholder="wss://ws.postman-echo.com/raw" />
     <button id="connect" class="btn btn-primary mt-2">Connect</button>
     <div id="wsControls" style="display:none" class="mt-2">
       <input id="wsMessage" class="form-control" placeholder="Message" />
