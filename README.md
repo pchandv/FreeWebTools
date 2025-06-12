@@ -13,6 +13,7 @@ It works entirely in the browser and can be hosted statically (e.g., GitHub Page
 - XML↔JSON converter
 - Postman-like REST API tester
 - WebSocket test suite
+- The WebSocket tester defaults to `wss://ws.postman-echo.com/raw` for echo tests
 - About page
 
 Additional tools can be added in `modules/`.
