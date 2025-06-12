@@ -32,5 +32,12 @@ Navigate using the menu links in `index.html`. Each module runs fully in the bro
 2. **Build for production** – there is no build step; copy the project files to any static host (GitHub Pages, Netlify, etc.).
 3. **Update the service worker** – edit `service-worker.js`, update the `ASSETS` array and bump `CACHE_NAME` whenever you add or remove files so users receive the latest cache.
 
+
 ## Contributing
 Pull requests are welcome. New tools should live in `modules/` and be wired up in `src/app.js` and `service-worker.js`. Keep the project lightweight and avoid server-side code.
+=======
+Service worker enables offline usage after the first load.
+
+## License
+This project is licensed under the [MIT License](LICENSE).
+
