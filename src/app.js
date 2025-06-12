@@ -58,5 +58,14 @@ btn.addEventListener('click', () => {
 
 // Register service worker
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('service-worker.js');
+  navigator.serviceWorker.register('service-worker.js').then(reg => {
+    navigator.serviceWorker.addEventListener('message', event => {
+      if (event.data && event.data.type === 'UPDATE_AVAILABLE') {
+        if (confirm('A new version is available. Reload now?')) {
+          reg.waiting?.postMessage({ type: 'SKIP_WAITING' });
+          window.location.reload();
+        }
+      }
+    });
+  });
 }
