@@ -9,6 +9,7 @@ import { initXmlJson } from '../modules/xmlJson.js';
 import { initApiTester } from '../modules/apiTester.js';
 import { initWebsocketTester } from '../modules/websocketTester.js';
 import { initCompressPdf } from '../modules/compressPdf.js';
+import { initImageOcr } from '../modules/imageOcr.js';
 
 const app = document.getElementById('app');
 
@@ -32,6 +33,9 @@ function render(hash) {
       break;
     case '#compresspdf':
       initCompressPdf(app);
+      break;
+    case '#ocr':
+      initImageOcr(app);
       break;
     case '#editor':
       initWysiwyg(app);

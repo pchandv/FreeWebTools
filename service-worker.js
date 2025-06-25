@@ -1,5 +1,5 @@
 // Increment the version to bust the cache when deploying a new release
-const CACHE_VERSION = 'v3';
+const CACHE_VERSION = 'v4';
 const CACHE_NAME = `free-web-tools-${CACHE_VERSION}`;
 const ASSETS = [
   './',
@@ -13,6 +13,7 @@ const ASSETS = [
   './modules/pdfToWord.js',
   './modules/wordToPdf.js',
   './modules/compressPdf.js',
+  './modules/imageOcr.js',
   './modules/wysiwyg.js',
   './modules/xmlJson.js',
   './modules/apiTester.js',
@@ -21,7 +22,8 @@ const ASSETS = [
   'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js',
   'https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js',
   'https://cdn.jsdelivr.net/npm/datatables.net@1.13.5/js/jquery.dataTables.min.js',
-  'https://cdn.jsdelivr.net/npm/datatables.net-dt@1.13.5/css/jquery.dataTables.min.css'
+  'https://cdn.jsdelivr.net/npm/datatables.net-dt@1.13.5/css/jquery.dataTables.min.css',
+  'https://cdn.jsdelivr.net/npm/tesseract.js@4.0.2/dist/tesseract.min.js'
 ];
 
 self.addEventListener('install', event => {
