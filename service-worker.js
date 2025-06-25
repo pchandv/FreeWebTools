@@ -12,6 +12,7 @@ const ASSETS = [
   './modules/about.js',
   './modules/pdfToWord.js',
   './modules/wordToPdf.js',
+  './modules/compressPdf.js',
   './modules/wysiwyg.js',
   './modules/xmlJson.js',
   './modules/apiTester.js',

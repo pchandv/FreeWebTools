@@ -8,6 +8,7 @@ import { initWysiwyg } from '../modules/wysiwyg.js';
 import { initXmlJson } from '../modules/xmlJson.js';
 import { initApiTester } from '../modules/apiTester.js';
 import { initWebsocketTester } from '../modules/websocketTester.js';
+import { initCompressPdf } from '../modules/compressPdf.js';
 
 const app = document.getElementById('app');
 
@@ -28,6 +29,9 @@ function render(hash) {
       break;
     case '#wordtopdf':
       initWordToPdf(app);
+      break;
+    case '#compresspdf':
+      initCompressPdf(app);
       break;
     case '#editor':
       initWysiwyg(app);
