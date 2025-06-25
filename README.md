@@ -4,6 +4,7 @@ This project is a collection of offline-first tools bundled as a Progressive Web
 
 ## Features
 - **Images to PDF** – combine multiple images into a single PDF file
+- **Image OCR** – extract text from pictures using Tesseract.js
 - **JSON to DataTable** – render JSON arrays as an interactive table
 - **JSON Tree View** – explore nested JSON in a collapsible tree
 - **PDF to Word** – convert PDF documents to Word
