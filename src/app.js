@@ -57,11 +57,21 @@ function render(hash) {
 window.addEventListener('hashchange', () => render(location.hash));
 render(location.hash || '#about');
 
-// Dark mode toggle
+// Dark mode toggle with persistence
 const btn = document.getElementById('modeToggle');
+
+function applyTheme(dark) {
+  document.body.classList.toggle('dark-mode', dark);
+  btn.textContent = dark ? 'Light Mode' : 'Dark Mode';
+}
+
+// Apply saved preference on startup
+applyTheme(localStorage.getItem('theme') === 'dark');
+
 btn.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-  btn.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
+  const useDark = !document.body.classList.contains('dark-mode');
+  applyTheme(useDark);
+  localStorage.setItem('theme', useDark ? 'dark' : 'light');
 });
 
 // Register service worker

@@ -37,7 +37,12 @@ Navigate using the menu links in `index.html`. Each module runs fully in the bro
 
 ## Contributing
 Pull requests are welcome. New tools should live in `modules/` and be wired up in `src/app.js` and `service-worker.js`. Keep the project lightweight and avoid server-side code.
-=======
+
+### Adding a module
+1. Create a new JavaScript file under `modules/` that exports an `initX` function.
+2. Import the file and add a new `case` in `src/app.js` so the module can be routed.
+3. Include the new file path in the `ASSETS` array of `service-worker.js` and bump `CACHE_VERSION` so the update is cached.
+
 Service worker enables offline usage after the first load.
 
 ## License

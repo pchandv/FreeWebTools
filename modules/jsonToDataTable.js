@@ -14,7 +14,13 @@ export function initJsonToDataTable(container) {
       const table = container.querySelector('#jsonTable');
       const headers = Object.keys(data[0]);
       table.innerHTML = `<thead><tr>${headers.map(h => `<th>${h}</th>`).join('')}</tr></thead>`;
-      const body = data.map(row => `<tr>${headers.map(h => `<td>${row[h]}</td>`).join('')}</tr>`).join('');
+      const escapeHtml = s => String(s)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+      const body = data.map(row => `<tr>${headers.map(h => `<td>${escapeHtml(row[h])}</td>`).join('')}</tr>`).join('');
       table.innerHTML += `<tbody>${body}</tbody>`;
       $(table).DataTable();
       table.style.display = '';
