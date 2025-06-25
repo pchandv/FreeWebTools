@@ -8,6 +8,7 @@ This project is a collection of offline-first tools bundled as a Progressive Web
 - **JSON Tree View** – explore nested JSON in a collapsible tree
 - **PDF to Word** – convert PDF documents to Word
 - **Word to PDF** – convert Word documents to PDF
+- **Compress PDF under 5MB** – reduce PDF file size below 5MB
 - **Rich WYSIWYG editor** – basic rich‑text editor with Word/PDF import and export
 - **XML ↔ JSON** – convert data between XML and JSON formats
 - **REST API tester** – send HTTP requests similar to Postman
