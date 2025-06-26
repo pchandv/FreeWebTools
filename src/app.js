@@ -62,6 +62,7 @@ const btn = document.getElementById('modeToggle');
 
 function applyTheme(dark) {
   document.body.classList.toggle('dark-mode', dark);
+  document.body.classList.toggle('light-mode', !dark);
   btn.textContent = dark ? 'Light Mode' : 'Dark Mode';
 }
 
