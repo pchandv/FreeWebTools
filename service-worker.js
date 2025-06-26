@@ -1,11 +1,13 @@
 // Increment the version to bust the cache when deploying a new release
-const CACHE_VERSION = 'v4';
+const CACHE_VERSION = 'v5';
 const CACHE_NAME = `free-web-tools-${CACHE_VERSION}`;
 const ASSETS = [
   './',
   './index.html',
   './manifest.json',
   './src/app.js',
+  './styles.css',
+  './script.js',
   './modules/imagesToPdf.js',
   './modules/jsonToDataTable.js',
   './modules/jsonTreeView.js',
