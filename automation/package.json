@@ -1,0 +1,15 @@
+{
+  "name": "hybrid-ui-automation",
+  "version": "1.0.0",
+  "description": "Automation framework for Delphi/WPF/WebView2 hybrid app",
+  "scripts": {
+    "native-test": "node native-test.js",
+    "web-test": "node web-test.js",
+    "test": "npm run native-test && npm run web-test"
+  },
+  "dependencies": {
+    "selenium-webdriver": "^4.21.0",
+    "playwright": "^1.39.0"
+  }
+}
+
